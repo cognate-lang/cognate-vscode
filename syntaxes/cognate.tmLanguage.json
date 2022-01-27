@@ -3,29 +3,86 @@
 	"name": "Cognate",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#words"
+		},
+		{
+			"include": "#symbols"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
+		"words": {
+			"patterns": [
+			{
 				"name": "keyword.control.cognate",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(I[fF]|F[oO][rR]|D[oO]|W[hH][iI][lL][eE]|L[oO][oO][pP])(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "storage.type",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(D[eE][fF]|[SL][eE][tT])(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "variable.language",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(P[rR][iI][nN][tT]|P[uU][tT])(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "keyword.other.cognate",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(T[rR][uU][eE]|F[aA][lL][sS][eE])(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "keyword.operator.cognate",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(\\+|\\-|\\*|\\/=|==|>=|<=|>|<|\\/)(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "entity.name.function.cognate",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))[A-Z][A-Za-z0-9?!-]*(?=($|[\\A\\s\\(\\);]))"
 			}]
 		},
 		"strings": {
-			"name": "string.quoted.double.cognate",
-			"begin": "\"",
-			"end": "\"",
+			"name": "string.quoted.single.cognate",
+			"begin": "'",
+			"end": "'",
 			"patterns": [
-				{
-					"name": "constant.character.escape.cognate",
-					"match": "\\\\."
-				}
-			]
+			{
+				"name": "constant.character.escape.cognate",
+				"match": "\\\\."
+			}]
+		},
+		"constants": {
+			"patterns": [
+			{
+				"name": "constant.numeric.cognate",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))-?[0-9]+\\.?[0-9]*[a-z]*(?=($|[\\A\\s\\(\\);]))"
+			},
+			{
+				"name": "constant.language.cognate",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))\\\\[A-Za-z0-9?!-]+(?=($|[\\A\\s\\(\\);]))"
+			}]
+		},
+		"comments": {
+			"patterns": [
+			{
+				"name": "comment.line",
+				"begin": "~~",
+				"end": "$"
+			},
+			{
+				"name": "comment.informal",
+				"begin": "~",
+				"end": "~"
+			},
+			{
+				"name": "comment.block",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))[a-z]\\w*(?=($|[\\A\\s\\(\\);]))"
+			}]
 		}
 	},
 	"scopeName": "source.cognate"
