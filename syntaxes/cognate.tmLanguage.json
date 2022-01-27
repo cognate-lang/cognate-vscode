@@ -13,9 +13,6 @@
 		},
 		{
 			"include": "#words"
-		},
-		{
-			"include": "#symbols"
 		}
 	],
 	"repository": {
