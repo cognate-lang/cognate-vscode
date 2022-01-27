@@ -1,0 +1,25 @@
+{
+    "name": "cognate-vscode",
+    "displayName": "cognate-vscode",
+    "description": "Visual Studio Code highlighting for the Cognate programming language.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "cognate",
+            "aliases": ["Cognate", "cognate"],
+            "extensions": [".cog"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "cognate",
+            "scopeName": "source.cognate",
+            "path": "./syntaxes/cognate.tmLanguage.json"
+        }]
+    }
+}
