@@ -3,6 +3,7 @@
     "displayName": "cognate-vscode",
     "description": "Visual Studio Code highlighting for the Cognate programming language.",
     "version": "0.0.1",
+    "icon": "icon.png",
     "engines": {
         "vscode": "^1.63.0"
     },
