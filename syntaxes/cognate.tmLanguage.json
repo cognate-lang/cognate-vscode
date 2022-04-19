@@ -24,7 +24,7 @@
 			},
 			{
 				"name": "storage.type",
-				"match": "(?<=(^|[\\A\\s\\(\\);]))(D[eE][fF]|[SL][eE][tT])(?=($|[\\A\\s\\(\\);]))"
+				"match": "(?<=(^|[\\A\\s\\(\\);]))(D[eE][fF]|[SL][eE][tT]|T[yY][pP][eE])(?=($|[\\A\\s\\(\\);]))"
 			},
 			{
 				"name": "variable.language",
