@@ -45,8 +45,8 @@
 		},
 		"strings": {
 			"name": "string.quoted.single.cognate",
-			"begin": "'",
-			"end": "'",
+			"begin": "\"",
+			"end": "\"",
 			"patterns": [
 			{
 				"name": "constant.character.escape.cognate",
@@ -72,13 +72,13 @@
 				"end": "$"
 			},
 			{
-				"name": "comment.informal",
+				"name": "comment.block",
 				"begin": "~",
 				"end": "~"
 			},
 			{
-				"name": "comment.block",
-				"match": "(?<=(^|[\\A\\s\\(\\);]))[a-z]\\w*(?=($|[\\A\\s\\(\\);]))"
+				"name": "comment.informal",
+				"match": "(?<=(^|[\\A\\s\\(\\);]))[a-z][a-z0-9\\-\\?\\!']*(?=($|[\\A\\s\\(\\);]))"
 			}]
 		}
 	},
